@@ -11,13 +11,14 @@ class StockConsumer(AsyncWebsocketConsumer):
             self.channel_name
         )
         await self.accept()
-
+        print("entrou")
     async def disconnect(self,close_code):
         # Remove o consumer do grupo ao desconectar
         await self.channel_layer.group_discard(
             self.group_name,
             self.channel_name
         )
+        print("disconnect")
 
     # Método que recebe as mensagens do Channel Layer
     async def stock_update(self, event):
@@ -27,3 +28,5 @@ class StockConsumer(AsyncWebsocketConsumer):
             'type': 'stock_update',
             'data': message
         }))
+        print(event)
+

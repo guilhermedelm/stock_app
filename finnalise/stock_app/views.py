@@ -5,7 +5,7 @@ from .models import Stock
 @login_required
 def dashboard(request):
     user_stocks = Stock.objects.filter(user= request.user)
-    return render(request , "stock_app/dashboard.html")
+    return render(request , "stock_app/dashboard.html", { "stocks":user_stocks})
 
 
 def index(request):

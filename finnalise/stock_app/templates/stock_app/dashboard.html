@@ -1,0 +1,30 @@
+<!-- stock_app/templates/stock_app/dashboard.html -->
+{% extends "stock_app/base.html" %}
+
+{% block title %}Meu Dashboard{% endblock %}
+
+{% block content %}
+<h2>Minhas Ações</h2>
+
+{% if stocks %}
+    <table>
+        <tr>
+            <th>Simbolo</th>
+            <th>Quantidade</th>
+            <th>Preço de Compra</th>
+            <th>Data</th>
+        </tr>
+        {% for stock in stocks %}
+        <tr>
+            <td>{{ stock.symbol }}</td>
+            <td>{{ stock.quantity }}</td>
+            <td>{{ stock.buy_price }}</td>
+            <td>{{ stock.created_at }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>Você não possui ações cadastradas.</p>
+{% endif %}
+
+{% endblock %}

@@ -132,4 +132,5 @@ CHANNEL_LAYERS = {
         },
     },
 }
- 
+
+LOGIN_REDIRECT_URL='/dashboard/' 

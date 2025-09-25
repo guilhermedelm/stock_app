@@ -1,0 +1,12 @@
+{% extends "users/users_base.html" %}
+
+{% block title %}Registrar{% endblock %}
+
+{% block content %}
+<h2>Criar Conta</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <button type="submit">Registrar</button>
+</form>
+{% endblock %}

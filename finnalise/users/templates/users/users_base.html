@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Meu Site{% endblock %}</title>
+
+</head>
+<body>
+    <header>
+        <h1>Meu Projeto Django</h1>
+        <nav>
+            <a href="/">Home</a> |
+            <a href="/users/login/">Login</a> |
+            <a href="/users/register/">Registrar</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}
+        <!-- Aqui vai o conteúdo específico de cada página -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 - Guilherme</p>
+    </footer>
+</body>
+</html>

@@ -1,26 +1,52 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8"/>
-    <title>Chat Rooms</title>
-</head>
-<body>
-    What chat room would you like to enter?<br>
-    <input id="room-name-input" type="text" size="100"><br>
-    <input id="room-name-submit" type="button" value="Enter">
+{% extends "stock_app/base.html" %}
 
-    <script>
-        document.querySelector('#room-name-input').focus();
-        document.querySelector('#room-name-input').onkeyup = function(e) {
-            if (e.key === 'Enter') {  // enter, return
-                document.querySelector('#room-name-submit').click();
-            }
-        };
+{% block title %} Login {% endblock %}
 
-        document.querySelector('#room-name-submit').onclick = function(e) {
-            var roomName = document.querySelector('#room-name-input').value;
-            window.location.pathname = '/chat/' + roomName + '/';
-        };
-    </script>
-</body>
-</html>
+{% block content %}
+
+
+
+
+<div id="index" class="page active">
+            <div class="hero-section">
+                <div class="hero-content">
+                    <h1 class="hero-title">Bem-vindo ao ModernSite</h1>
+                    <p class="hero-subtitle">A plataforma completa para gerenciar seus dados e buscar informações de forma inteligente</p>
+                    
+                    <div class="hero-features">
+                        <div class="feature">
+                            <span class="feature-icon">📊</span>
+                            <h3>Dashboard Intuitivo</h3>
+                            <p>Visualize suas estatísticas e métricas importantes em tempo real com gráficos interativos</p>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🔍</span>
+                            <h3>Busca Avançada</h3>
+                            <p>Encontre rapidamente qualquer informação com nosso sistema de busca inteligente e filtros avançados</p>
+                        </div>
+                        <div class="feature">
+                            <span class="feature-icon">🚀</span>
+                            <h3>Performance Superior</h3>
+                            <p>Interface moderna e responsiva que funciona perfeitamente em qualquer dispositivo</p>
+                        </div>
+                    </div>
+
+                    <div class="auth-section">
+                        <h2>Comece Agora</h2>
+                        <p class="auth-description">Acesse sua conta ou crie uma nova para começar a usar todas as funcionalidades</p>
+                        
+                        <div class="auth-buttons">
+                            <a href="/users/login/" class="auth-btn login-btn">
+                                <span class="btn-icon">👤</span>
+                                 Fazer Login
+                            </a>
+                             <a href="/users/register/" class="auth-btn login-btn">
+                                <span class="btn-icon">👤</span>
+                                 Registrar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}

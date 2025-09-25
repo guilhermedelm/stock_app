@@ -24,6 +24,7 @@ async def send_to_channel_layer(message_data):
             'type': 'stock.update',
             'message': message_data
         }
+    
     )
 
 def on_message(ws, message):
